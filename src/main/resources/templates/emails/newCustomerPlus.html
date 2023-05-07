@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>New User Email</title>
+</head>
+<body style="background-color:lightblue">
+<table align="center" border="0" cellpadding="0" cellspacing="0"
+       width="550" bgcolor="#20b2aa" style="border:2px solid black">
+  <tbody>
+  <tr>
+    <td align="center">
+      <br />
+      <p style="color:black;font-weight:bold; font-size: 1.2rem">
+        Thomas Jay Consulting
+      </p>
+      <div>Hi <span th:text="${name}" th:remove="tag"></span></div>
+      <p></p>
+      <div>Thanks for being a user today</div>
+      <p>Checkout out our education content</p>
+      <ul th:each="offer : ${offerings}">
+        <li>
+          <span th:text="${offer.name}" th:remove="tag"></span>
+          <a th:href="@{${offer.link}}">Check it out now</a>
+        </li>
+      </ul>
+      <p></p>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <p>
+        Thanks for joining, <br/>
+        <em>Thomas Jay Consulting</em>
+      </p>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
+
